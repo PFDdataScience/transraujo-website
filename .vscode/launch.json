@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Vite App",
+      "program": "${workspaceFolder}/${input:programPath}",
+      "args": ["dev"],
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "programPath",
+      "description": "Select the entry point for your application",
+      "options": [
+        "src/main.tsx",
+        "transaraujo-website/src/index.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", "transaraujo-website/src/App.test.tsx", "transaraujo-website/src/main.tsx", "transaraujo-website/src/components/Services.tsx", "transaraujo-website/src/components/ScrollToTop.tsx", "transaraujo-website/src/components/Navbar.tsx", "transaraujo-website/src/components/Hero.tsx", "transaraujo-website/src/components/Footer.tsx", "transaraujo-website/src/components/CruiseSection.tsx", "transaraujo-website/src/vite-env.d.ts"]
+}
