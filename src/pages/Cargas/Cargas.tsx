@@ -1,39 +1,34 @@
+import { Container, Row, Col } from 'react-bootstrap';
+import { Truck } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import Navbar from '../../components/Navbar'; // Caminho corrigido para importar o Navbar
+import Footer from '../../components/Footer'; // Caminho corrigido para importar o Footer
+
 const Cargas = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Transporte de Cargas</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <p className="text-gray-700">
-            Oferecemos soluções completas para o transporte de cargas, com
-            segurança, eficiência e agilidade. Nossa frota moderna e equipada
-            garante a entrega de sua carga no destino certo e no prazo
-            combinado.
-          </p>
-          {/* Outras informações sobre o serviço */}
-        </div>
-        <div>
-          <img
-            src="/images/caminhao.jpg" // Substitua pelo caminho da sua imagem
-            alt="Caminhão de transporte de cargas"
-            className="w-full rounded-lg"
-          />
-        </div>
-      </div>
-
-      {/* Seção de depoimentos ou cases de sucesso */}
-      <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Depoimentos</h2>
-        {/* Adicione depoimentos de clientes */}
-      </div>
-
-      {/* Formulário de contato */}
-      <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Solicite um orçamento</h2>
-        {/* Adicione um formulário de contato */}
-      </div>
-    </div>
+    <>
+      <Navbar /> {/* Adiciona o Navbar */}
+      <Container fluid className="px-0">
+        <Helmet>
+          <title>Cargas | Transaraújo</title>
+        </Helmet>
+        <Row className="py-5">
+          <Col xs={12} md={6} className="d-flex flex-column justify-content-center">
+            <h1 className="display-4">Transporte de Cargas</h1>
+            <p className="text-muted">
+              Oferecemos soluções completas para o transporte de cargas, com segurança, eficiência e agilidade.
+              Nossa frota moderna e equipada garante a entrega de sua carga no destino certo e no prazo combinado.
+            </p>
+          </Col>
+          <Col xs={12} md={6} className="d-flex justify-content-center">
+            <div className="d-flex flex-column align-items-center">
+              <Truck size={64} />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <Footer /> {/* Adiciona o Footer */}
+    </>
   );
 };
 

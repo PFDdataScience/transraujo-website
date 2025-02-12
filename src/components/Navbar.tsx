@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/logo transaraujo fundo transparente.png'; // Importação da logo
+import logo from '../assets/images/logo.svg'; // Importação da logo
+import ScrollToTop from './ScrollToTop';
 
-const Navbar = () => {
+function Navbar() {
   const navigate = useNavigate();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     navigate('/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    <ScrollToTop />; // Use ScrollToTop as a component
+  };
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const footerElement = document.getElementById('footer');
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const services = [
@@ -26,8 +35,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <img src={logo} alt="Logo da Transaraujo" className="h-8 w-auto" /> {/* Logo aqui */}
-            <span className="ml-2 text-xl font-bold text-gray-800">TRANSARAÚJO</span>
+            <img src={logo} alt="Logo da Transaraujo" className="h-auto w-auto" /> {/* Aumenta o tamanho da logo */}
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="/" onClick={handleHomeClick} className="text-gray-600 hover:text-blue-600">Início</a>
@@ -41,12 +49,13 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <a href="/contato" className="text-gray-600 hover:text-blue-600">Contato</a>
+            <a href="#footer" onClick={handleContactClick} className="text-gray-600 hover:text-blue-600">Contato</a>
           </div>
         </div>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
+
