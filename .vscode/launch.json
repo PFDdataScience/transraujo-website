@@ -17,7 +17,7 @@
       "description": "Select the entry point for your application",
       "options": [
         "src/main.tsx",
-        "transaraujo-website/src/index.js"
+        "src/index.tsx"
       ]
     }
   ]

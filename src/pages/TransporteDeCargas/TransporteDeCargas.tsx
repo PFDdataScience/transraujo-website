@@ -1,16 +1,16 @@
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Truck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../../components/Navbar'; // Caminho corrigido para importar o Navbar
 import Footer from '../../components/Footer'; // Caminho corrigido para importar o Footer
 
-const Cargas = () => {
+const TransporteDeCargas = () => {
   return (
     <>
       <Navbar /> {/* Adiciona o Navbar */}
       <Container fluid className="px-0">
         <Helmet>
-          <title>Cargas | Transaraújo</title>
+          <title>Transporte de Cargas | Transaraújo</title>
         </Helmet>
         <Row className="py-5">
           <Col xs={12} md={6} className="d-flex flex-column justify-content-center">
@@ -22,7 +22,7 @@ const Cargas = () => {
           </Col>
           <Col xs={12} md={6} className="d-flex justify-content-center">
             <div className="d-flex flex-column align-items-center">
-              <Truck size={64} />
+              <img src="/images/transporte-de-cargas.jpg" alt="Transporte de Cargas" className="w-full rounded-lg" />
             </div>
           </Col>
         </Row>
@@ -32,4 +32,4 @@ const Cargas = () => {
   );
 };
 
-export default Cargas;
+export default TransporteDeCargas;

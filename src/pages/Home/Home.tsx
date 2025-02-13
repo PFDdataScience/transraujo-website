@@ -1,24 +1,35 @@
-import Navbar from '../../components/Navbar'; // Importa o Navbar
-import Services from '../Services/Services'; // Importa o Services
-import Hero from '../../components/Hero'; // Importa o Hero
-import CruiseSection from '../../components/CruiseSection'; // Importa o CruiseSection
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Hero from '../../components/Hero'; // Caminho corrigido para importar o Hero
+import Services from '../../components/Services'; // Caminho corrigido para importar o Services
+import About from '../../components/About'; // Caminho corrigido para importar o About
+import Contact from '../../components/Contact'; // Caminho corrigido para importar o Contact
+import Navbar from '../../components/Navbar'; // Caminho corrigido para importar o Navbar
+import Footer from '../../components/Footer'; // Caminho corrigido para importar o Footer
 
 const Home = () => {
   return (
-    <div> {/* Envolve tudo em um elemento pai */}
-      <Navbar /> {/* Utiliza o Navbar */}
-      <Hero /> {/* Utiliza o Hero */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Bem-vindo à Transaraujo</h1>
-        <p className="text-gray-700">
-          Oferecemos soluções completas para o transporte de cargas, com segurança, eficiência e agilidade.
-        </p>
-        <img src="/images/caminhao.jpg" alt="Caminhão de transporte de cargas" className="w-full rounded-lg" />
-      </div>
-      <Services /> {/* Utiliza o Services */}
-      <CruiseSection /> {/* Utiliza o CruiseSection */}
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Container fluid className="px-0">
+        <Row className="py-5">
+          <Col xs={12} md={6} className="d-flex flex-column justify-content-center">
+            <Services />
+          </Col>
+          <Col xs={12} md={6} className="d-flex justify-content-center">
+            <About />
+          </Col>
+        </Row>
+        <Row className="py-5">
+          <Col xs={12} md={6} className="d-flex flex-column justify-content-center">
+            <Contact />
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
+    </>
   );
-}
+};
 
 export default Home;
